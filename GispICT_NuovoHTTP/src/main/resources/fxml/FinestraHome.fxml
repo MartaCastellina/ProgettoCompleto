@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="535.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.HomeController">
+   <children>
+      <Button fx:id="btnCercaFarmaco" contentDisplay="CENTER" layoutX="304.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleCercaFarmaco" prefHeight="36.0" prefWidth="170.0" text="Search medication">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAggiungi" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleAggiungi" prefHeight="36.0" prefWidth="169.0" text="Add medications" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="178.0" layoutY="75.0" text="What do you want to do?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnStatistiche" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleStatistiche" prefHeight="36.0" prefWidth="169.0" text="Show Statistics" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnMagazzinoReparti" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleMostraMagazzino" prefHeight="35.0" prefWidth="170.0" text="Show Ward Stockage" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Collect medications" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnInScadenza" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleInScadenza" prefHeight="36.0" prefWidth="169.0" text="Expiring medications" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="110.0" layoutY="321.0" text="Pneumology">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="321.0" text="Current ward:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRequest" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleRequests" prefHeight="36.0" prefWidth="170.0" text="See requests" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@digitalMEDLogoExtTagliata.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="64.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="temperatura" fill="#ed0000" layoutX="223.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24.7 C" visible="false">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+      <Text fx:id="temperaturaTxt" fill="#ed0000" layoutX="140.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alert temperature!" visible="false" wrappingWidth="253.53912353515625">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
