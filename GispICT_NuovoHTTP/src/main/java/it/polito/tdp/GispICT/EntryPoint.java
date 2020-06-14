@@ -54,8 +54,8 @@ public class EntryPoint extends Application  {
      */
     public static void main(String[] args) {
     	
-    	Thread t2=new Http();
-    	t2.start();
+    	Thread t2=new Http(); //Definisco il nuovo thread
+    	t2.start(); //Faccio partire il thread
     	
     	launch(args);
     	

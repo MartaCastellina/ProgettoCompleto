@@ -346,6 +346,30 @@ String sql = "SELECT * FROM farmaci ";
 		}
 	}
 
+	public void addRecordDigitalMed(double temperaturadouble, double IDLettura) {
+		
+		String sql = "INSERT INTO digitalmed (IDArduino,Temperatura,IDReparto,TempMAX,TempMIN,IDLettura) " + 
+				"VALUES (1,?,106,20,0,?) ";
+
+		
+		Connection conn = DBConnectionMarta.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			
+			st.setDouble(1, temperaturadouble);	
+			st.setDouble(2, IDLettura);
+			st.executeUpdate();
+			System.out.println("aggiunto");
+			conn.close();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+	}
+
 	
 		
 	}

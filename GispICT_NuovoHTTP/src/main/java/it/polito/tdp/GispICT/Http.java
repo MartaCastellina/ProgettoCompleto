@@ -14,24 +14,21 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import it.polito.tdp.Controller.HomeController;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import it.polito.tdp.db.MartaDAO;
+
 
 public class Http extends Thread{
-  HomeController home=new HomeController ();
+	MartaDAO dao=new MartaDAO();
+
 private boolean st=true;
 int i=0;
   @Override
-  public void run() {
+  public void run() { //Run() è la funzione che il thread carica in fase di costruzione. E' invocato quando si effettua chiamata al metodo start()
     while (true) {
       try {
       URL url = new URL("https://api.thingspeak.com/channels/1052295/fields/1.json?api_key=XQ8FC2GJYJJNTPBL&results=1");
       i++;
-      if(i>=10)
+      if(i>=10) //10 letture
       { st=true;
       i=0;}
       HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -58,14 +55,15 @@ int i=0;
           String[] temperatura=parte1.split(Pattern.quote(":"));
           String temp=temperatura[temperatura.length-1];
       
-          //System.out.println(temp.substring(1, temp.length()-4));
+     
           String temp1=temp.substring(1, temp.length()-4);
           double temperaturadouble= Double.parseDouble(temp1);
           System.out.println(temperaturadouble);
-        System.out.println(inline);
+          System.out.println(inline);
+          double IDLettura=Math.random();
+          dao.addRecordDigitalMed(temperaturadouble,IDLettura);
         if ((temperaturadouble>20 || temperaturadouble<0) && st) {
-          //home.alert("PROVA");
-          
+                    
                 final JFrame parent = new JFrame();
                 JButton button = new JButton();
                 parent.setPreferredSize(new Dimension(400, 300));
@@ -80,7 +78,7 @@ int i=0;
                 st= false;
 
                 button.addActionListener(new java.awt.event.ActionListener() {
-                  //Qui dire di stoppare thread
+                 
                     @Override
                     
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +99,13 @@ int i=0;
         
         sc.close();
       }
+      try {
+		Thread.sleep(5000); //Metto il thread in sleep per 5 secondi. Devo usare Try catch perchè è possibile che un altro thread
+							//invochi il metodo interrupt() e interrompa lo stato di sleep. Infatti c'è InterruptedException
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
       }
 
       
@@ -115,10 +120,5 @@ int i=0;
     
   
 
-  public static void main(String[] args) throws IOException {
-          //here you should add your channel.
-        
 
-      
-  }
   }
