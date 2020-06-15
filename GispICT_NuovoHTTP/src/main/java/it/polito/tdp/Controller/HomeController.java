@@ -52,11 +52,7 @@ public class HomeController {
     @FXML // fx:id="btnRequest"
     private Button btnRequest; // Value injected by FXMLLoader
 
-    @FXML
-    private Text temperatura;
 
-    @FXML
-    private Text temperaturaTxt;
     @FXML
     void handleAggiungi(ActionEvent event) throws IOException {
 
@@ -69,7 +65,7 @@ public class HomeController {
     	Scene secondaSchermataScene=new Scene(secondaSchermataParent);
     	//Accediamo al controller e chiamiamo metodo, prende il controller da Scene2
     	InserisciFarmacoController controller= loader.getController();
-    	//controller.setModel(this.model);  QUI ERA IL PROBLEMA CHE NON faceva tornare indietro 
+
     	
     	//Questa riga prende le informazioni dello stage
     	Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -151,35 +147,15 @@ public class HomeController {
         assert btnPreleva != null : "fx:id=\"btnPreleva\" was not injected: check your FXML file 'FinestraHome.fxml'.";
         assert btnInScadenza != null : "fx:id=\"btnInScadenza\" was not injected: check your FXML file 'FinestraHome.fxml'.";
         assert btnRequest != null : "fx:id=\"btnRequest\" was not injected: check your FXML file 'FinestraHome.fxml'.";
-        assert temperatura != null : "fx:id=\"temperatura\" was not injected: check your FXML file 'FinestraHome.fxml'.";
-        assert temperaturaTxt != null : "fx:id=\"temperaturaTxt\" was not injected: check your FXML file 'FinestraHome.fxml'.";
-        
+       
     }
 
 	public void setModel(MartaModel model) {
 		this.model=model;
 		
 	}
-	/** +++++++++++++++++++++ MODIFICARE QUESTO ++++++++++++++++
-	public void setFlag(boolean flag) {
-		
-		if (flag==true) {
-			textTemperatura.setText("ATTENZIONE TEMPERATURA!");
-		}
-	}
-	*/
+	
 
-	public void setAlert(String string) {
-		
-		temperaturaTxt.setText(string);
-		temperaturaTxt.setVisible(true);
-	}
-
-	public void alert(String string) {
-		System.out.println(string);
-		setAlert(string);
-		
-	}
-
+	
 	
 }

@@ -60,9 +60,9 @@ int i=0;
           double temperaturadouble= Double.parseDouble(temp1);
           System.out.println(temperaturadouble);
           System.out.println(inline);
-          double IDLettura=Math.random();
+          double IDLettura=Math.random(); //Genero un codice univoco
           dao.addRecordDigitalMed(temperaturadouble,IDLettura);
-        if ((temperaturadouble>20 || temperaturadouble<0) && st) {
+        if ((temperaturadouble>25 || temperaturadouble<0) && st) { //check sulla temperatura
                     
                 final JFrame parent = new JFrame();
                 JButton button = new JButton();
@@ -78,6 +78,7 @@ int i=0;
                 st= false;
 
                 button.addActionListener(new java.awt.event.ActionListener() {
+                	//Per gestire l'interazione con il bottone
                  
                     @Override
                     

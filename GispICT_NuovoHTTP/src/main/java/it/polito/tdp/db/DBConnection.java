@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 public class DBConnection {
 	
-	private static String jdbcURL = "jdbc:mysql://localhost/digitalmed?user=root&password=root" ;
+	private static String jdbcURL = "jdbc:mysql://localhost/digitalmed?user=root&password=root" ; //Connessione al db su server locale
 	
 
 	

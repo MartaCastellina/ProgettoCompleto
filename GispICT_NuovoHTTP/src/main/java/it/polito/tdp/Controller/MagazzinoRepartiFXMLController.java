@@ -64,22 +64,13 @@ public class MagazzinoRepartiFXMLController {
     	}
     	txtElenco.setText(result);
     }
-    /*
-    void popolaComboBox() {
-    	cmbWard.getItems().clear();
-    	List reparti=new ArrayList<Reparto>();
-    	reparti=dao.listaReparti();
-    	cmbWard.getItems().addAll(reparti);
-    	
-    }
-    */
+
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
     	 assert medication != null : "fx:id=\"medication\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
          assert txtElenco != null : "fx:id=\"txtElenco\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
          assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
-        // assert cmbWard != null : "fx:id=\"cmbWard\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
-       // popolaComboBox();
+
          popolaTxt1();
         
     }

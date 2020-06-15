@@ -349,7 +349,7 @@ String sql = "SELECT * FROM farmaci ";
 	public void addRecordDigitalMed(double temperaturadouble, double IDLettura) {
 		
 		String sql = "INSERT INTO digitalmed (IDArduino,Temperatura,IDReparto,TempMAX,TempMIN,IDLettura) " + 
-				"VALUES (1,?,106,20,0,?) ";
+				"VALUES (1,?,106,25,0,?) ";
 
 		
 		Connection conn = DBConnectionMarta.getConnection() ;

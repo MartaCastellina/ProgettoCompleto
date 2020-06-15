@@ -71,22 +71,14 @@ public class InserisciFarmacoController {
     @FXML
     void handleConfirm(ActionEvent event) throws IOException {
     	   	
-    //	Reparto repartoSelezionato=(Reparto) comboReparti.getValue();
-    	  	
-    	
+     	  	
     	try {
 
 			if (txtIdFarmaco.getText().isEmpty()) {
 				allertText.setText("Add the ID");
 				return;
 			}
-			/*
-
-			if (comboReparti.getValue() == null) {
-				allertText.setText("Select a ward");
-				return;
-			}
-			*/
+			
 			if (txtQty.getText().isEmpty()) {
 				allertText.setText("Insert qty");
 			}    	
@@ -95,7 +87,7 @@ public class InserisciFarmacoController {
 			// Prendo l'ID in input
 			int idFarmaco = Integer.parseInt(txtIdFarmaco.getText());
 
-			// (opzionale)
+			
 			
 			Farmaco farmaco = model.getFarmaco(idFarmaco);
 			if (farmaco == null) {
@@ -181,14 +173,5 @@ public class InserisciFarmacoController {
          assert btnVerifica != null : "fx:id=\"btnVerifica\" was not injected: check your FXML file 'InserisciFarmaco.fxml'.";
         
     }
-    /*
 
-	public void setModel(MartaModel model) {
-		this.model=new MartaModel(); 
-		this.model=model;
-		 
-         setCombo(); //Il problema è questo quando faccio passaggio da una pag all'altra per tornare indietro
-		
-	}
-	*/
 }

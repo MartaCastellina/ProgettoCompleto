@@ -172,8 +172,7 @@ public class RichiesteController {
         txtRifiutata1.setVisible(false);
         txtRifiutata2.setVisible(false);
         txtRifiutata3.setVisible(false);
-        
-        
+            
         setTxtArea();
     }
 
